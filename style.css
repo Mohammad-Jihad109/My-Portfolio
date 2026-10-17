@@ -21,8 +21,8 @@ html {
 
 body {
     font-family: Arial, sans-serif;
-    color: var(--text);
     background: var(--white);
+    color: var(--text);
     line-height: 1.7;
 }
 
@@ -31,11 +31,12 @@ body {
     margin: auto;
 }
 
+/* Navigation */
 .header {
-    background: white;
     position: sticky;
     top: 0;
     z-index: 100;
+    background: white;
     box-shadow: 0 2px 15px rgba(0,0,0,0.06);
 }
 
@@ -50,8 +51,8 @@ body {
 .logo {
     font-size: 27px;
     font-weight: bold;
-    color: var(--dark);
     text-decoration: none;
+    color: var(--dark);
 }
 
 .logo span,
@@ -69,8 +70,8 @@ body {
 .nav-links a {
     text-decoration: none;
     color: var(--dark);
-    font-weight: 600;
     font-size: 14px;
+    font-weight: 600;
     transition: color 0.3s;
 }
 
@@ -87,6 +88,7 @@ body {
     color: var(--dark);
 }
 
+/* Home */
 .hero {
     min-height: 610px;
     display: grid;
@@ -105,15 +107,15 @@ body {
 }
 
 .hero h1 {
-    color: var(--dark);
     font-size: clamp(36px, 5vw, 56px);
     line-height: 1.2;
+    color: var(--dark);
     margin: 14px 0;
 }
 
 .hero h2 {
-    color: #334155;
     font-size: 21px;
+    color: #334155;
     margin-bottom: 18px;
 }
 
@@ -134,7 +136,7 @@ body {
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
-    transition: transform 0.3s, background 0.3s;
+    transition: transform 0.3s;
 }
 
 .btn:hover {
@@ -151,6 +153,7 @@ body {
     color: var(--primary);
 }
 
+/* Profile Picture */
 .hero-visual {
     display: flex;
     justify-content: center;
@@ -161,26 +164,31 @@ body {
     width: min(320px, 100%);
     aspect-ratio: 1;
     border-radius: 50%;
-    background: linear-gradient(135deg, #dbeafe, #93c5fd);
+    background: #dbeafe;
     border: 12px solid #eff6ff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow: hidden;
     box-shadow: 0 18px 50px rgba(37,99,235,0.15);
     animation: float 4s ease-in-out infinite;
 }
 
-.profile-circle span {
-    font-size: 95px;
-    font-weight: bold;
-    color: var(--primary);
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
 }
 
+/* Sections */
 .section {
     padding: 85px 0;
 }
@@ -211,6 +219,7 @@ body {
     margin-bottom: 16px;
 }
 
+/* Cards */
 .cards {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -244,6 +253,7 @@ body {
     margin-bottom: 18px;
 }
 
+/* Skills */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -268,6 +278,7 @@ body {
     transform: translateY(-4px);
 }
 
+/* Project Tags */
 .tags {
     display: flex;
     flex-wrap: wrap;
@@ -284,6 +295,7 @@ body {
     font-weight: bold;
 }
 
+/* Contact */
 .contact-container {
     max-width: 760px;
 }
@@ -296,20 +308,22 @@ body {
     text-align: center;
 }
 
+.contact-card p {
+    margin-bottom: 15px;
+}
+
 .contact-card a {
     color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
     overflow-wrap: anywhere;
 }
 
-.contact-card p {
-    margin-bottom: 12px;
+.contact-card a:hover {
+    text-decoration: underline;
 }
 
-.note {
-    font-size: 12px;
-    color: #64748b;
-}
-
+/* Footer */
 .footer {
     background: var(--dark);
     color: white;
@@ -317,7 +331,7 @@ body {
     padding: 25px;
 }
 
-/* Tablet and Mobile */
+/* Responsive Design */
 @media (max-width: 900px) {
     .menu-toggle {
         display: block;
@@ -388,10 +402,6 @@ body {
 
     .profile-circle {
         width: 200px;
-    }
-
-    .profile-circle span {
-        font-size: 65px;
     }
 }
 
